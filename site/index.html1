@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>تسجيل الدخول</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f1f1f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        background: white;
+        padding: 40px;
+        width: 350px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+        text-align: center;
+    }
+    input {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        width: 95%;
+        padding: 10px;
+        background: #1a73e8;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #resultBox {
+        margin-top: 20px;
+        padding: 10px;
+        background: #fff3cd;
+        border: 1px solid #ffeeba;
+        border-radius: 5px;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>تسجيل الدخول</h2>
+    <input type="text" id="email" placeholder="أدخل الإيميل">
+    <input type="password" id="password" placeholder="أدخل كلمة المرور">
+    <button onclick="fakeLogin()">تسجيل الدخول</button>
+
+    <p id="userMessage" style="color:red; margin-top:20px; display:none; font-weight:bold;"></p>
+
+    <div id="resultBox"></div>
+</div>
+
+<script>
+function fakeLogin() {
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+
+    // رسالة للمستخدم
+    document.getElementById("userMessage").innerHTML = "( الموقع وهمي تم الإغلاق وشكرا 😘 )";
+    document.getElementById("userMessage").style.display = "block";
+
+    // بيانات وهمية تظهر لك أنتي فقط داخل الصفحة
+    document.getElementById("resultBox").style.display = "block";
+    document.getElementById("resultBox").innerHTML =
+        "<b>الإيميل الوهمي:</b> " + email + "<br>" +
+        "<b>كلمة المرور الوهمية:</b> " + pass;
+}
+</script>
+
+</body>
+</html>
